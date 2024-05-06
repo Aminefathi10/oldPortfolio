@@ -207,6 +207,7 @@ section{
     padding: 0;
     transition: 200ms;
     border: none;
+    background-color: transparent;
 }
 #more-projects{
     text-decoration: none;
