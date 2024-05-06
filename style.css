@@ -10,38 +10,42 @@ html{
     overflow-x: hidden;
 }
 body{
-    background-color: rgba(0, 81, 119, 0.788);
+    background-color: #444444;
     color: white;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    max-width: 1500px;
+
 }
 :root{
    --prime-color: #004d36; 
-   --sec-color: #00996b;
+   --sec-color: #004d36;
 }
 header{
     padding: 0;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 10vh;
-    max-height: 200px;
+    min-height: 30px;
+    max-height: 100px;
     background-color: #004d36;
     overflow: hidden;
     z-index: 999;
+    display: flex;
+    justify-content: end;
 }
 ul{
     position: absolute;
     top: -16px;
     height: 100%;
-    width: 100%;
     display: flex;
     justify-content: end;
     list-style: none;
+    margin-right: 15px;
 }
 li{
     height: 100%;
     margin-right: 0;
-    margin: 0 10px;
 }
 
 ul li a{
@@ -49,7 +53,7 @@ ul li a{
     transition: 200ms;
     display: block;
     padding: 0 10px;
-    font-size: 2rem;
+    font-size: 2em;
     text-decoration: none;
     height: 100%;
     display: flex;
@@ -58,12 +62,10 @@ ul li a{
     font-weight: 700;
 }
 
-ul li a:hover{
-    border-bottom: solid aliceblue;
+ul li a:hover, ul li a:focus{
+    border-bottom: 5px solid aliceblue;
 }
-ul li a:focus{
-    border-bottom: solid aliceblue;
-}
+
 section{
     width: 100%;
 }
@@ -79,9 +81,11 @@ section{
 }
 #introduction h1{
     font-size: 6rem;
+    margin-bottom: -0.6rem;
 }
 #introduction h2{
     font-size: 2rem;
+    color:hsl(0, 0%, 100%);
 }
 @media (max-width: 400px){
     ul li a{
@@ -96,6 +100,7 @@ section{
     }
 }
 #my-projects{
+    position: relative;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -105,7 +110,7 @@ section{
     color: antiquewhite;
     text-decoration: none;
     margin: 10px;
-    width: 80vw;
+    width: 90vw;
     height: 60vw;
     border: solid white;
     border-radius: 3px;
@@ -184,14 +189,46 @@ section{
 }
 @media screen and (max-width: 520px){
     #my-projects a  p{
-        font-size: 1.5em;
+        font-size: 1.8em;
 }
 
 }
-@media screen and (max-width: 520px){
-    #my-projects a  p{
-        font-size: 1.3em;
+
+
+#sec-header{
+    font-size:2.4rem;
+    margin-left: 20px;
 }
+#more-pro-btn{
+    z-index: 1;
+    position: relative;
+    margin-left: calc(50% - 70px);
+    bottom: -30px;
+    padding: 0;
+    transition: 200ms;
+}
+#more-projects{
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 10px auto;
+    padding: 3px 5px;
+    background-color: antiquewhite;
+    color:#004d36;
+    font-weight: 700;
+    font-family: Helvetica, sans-serif;
+    transition: 200ms;
+}
+#more-projects::after{
+    content: '>';
+    margin: 2px;
+    position: relative;
+    bottom: -2.2px;
+   
+}
+#more-pro-btn:hover #more-projects{
+    color: white;
+    background-color: #004d36;
+
 }
 #contacts{
     position: relative;
@@ -207,15 +244,35 @@ section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%
+    position: reltaive;
+    top: 50px;
+    margin: 0 auto;
+    width: 90%;
 }
 @media (max-width: 500px) {
     #contacts #contact-list{
         flex-direction: column;
-        bottom: 0;
+    transform: translateY(-58px);
+    bottom: 0;
+        margin-top: -14%;
+    }
+    #contacts #contact-list a{
+        left: 20%;
+    }
+    #contacts #contact-list a:nth-child(1){
+        top: 70px;
+    }
+    #contacts #contact-list a:nth-child(2){
+        top: 140px;
+    }
+    #contacts #contact-list a:nth-child(3){
+        top: 210px;
+    }
+    #contacts #contact-list a:nth-child(4){
+        top: 280px;
+    }
+    #contacts #contact-list a:nth-child(5){
+        top: 350px;
     }
 }
 #contacts #contact-list a{
@@ -230,15 +287,37 @@ section{
     font-family:  Helvetica, sans-serif;
     padding: 5px;
     transition: 200ms ease;
+    position: absolute;
+}
+@media (min-width: 500.1px) {
+#contacts #contact-list a{
+    top: 50%;
+}
+#contacts #contact-list a:nth-child(1){
+    left: 100px;
+}
+#contacts #contact-list a:nth-child(2){
+    left: 330px;
+}
+#contacts #contact-list a:nth-child(3){
+    left: 540px;
+}
+#contacts #contact-list a:nth-child(4){
+    left: 730px;
+}
+#contacts #contact-list a:nth-child(5){
+    left: 1000px;
 }
 #contacts #contact-list a img{
     margin: 0 5px;
+}
 }
 #contacts #contact-list a:hover{
     border: solid black 2px;
     border-radius: 3px;
     transform: scale(1.2);
 }
+
 footer{
     height: 15vh;
     max-height: 150px;
@@ -248,6 +327,14 @@ footer{
     display: flex;
     justify-content: start;
     align-items: center;
+}
+
+@media  (max-width: 500px) {
+    footer{
+        flex-direction: column;
+        align-items: start;
+        height: 10vh;
+    }
 }
 footer h3{
     font-family: helvetica, sans-serif;
