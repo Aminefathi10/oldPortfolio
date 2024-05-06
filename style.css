@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+f@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
 
 *, *::before, *::after{
     box-sizing: border-box;
@@ -206,6 +206,7 @@ section{
     bottom: -30px;
     padding: 0;
     transition: 200ms;
+    border: none;
 }
 #more-projects{
     text-decoration: none;
