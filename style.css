@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+html{
+    padding: 0;
+    margin: 0;
+    scroll-behavior:smooth;
+    overflow-x: hidden;
+}
+body{
+    background-color: #444444;
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1500px;
+
+}
+:root{
+   --prime-color: #004d36; 
+   --sec-color: #004d36;
+}
+header{
+    padding: 0;
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    min-height: 30px;
+    max-height: 100px;
+    background-color: #004d36;
+    overflow: hidden;
+    z-index: 999;
+    display: flex;
+    justify-content: end;
+}
+ul{
+    position: absolute;
+    top: -16px;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    margin-right: 15px;
+}
+li{
+    height: 100%;
+    margin-right: 0;
+}
+
+ul li a{
+    color: aliceblue;
+    transition: 200ms;
+    display: block;
+    padding: 0 10px;
+    font-size: 2em;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+ul li a:hover, ul li a:focus{
+    border-bottom: 5px solid aliceblue;
+}
+
+section{
+    width: 100%;
+}
+#introduction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Radio Canada Big", sans-serif;
+  font-optical-sizing: auto;
+
+  height: 100vh;
+}
+#introduction h1{
+    font-size: 6rem;
+    margin-bottom: -0.6rem;
+}
+#introduction h2{
+    font-size: 2rem;
+    color:hsl(0, 0%, 100%);
+}
+@media (max-width: 400px){
+    ul li a{
+        font-size: 1.7rem;
+    }
+    #introduction h1{
+        font-size: 5rem;
+    }
+    #introduction h2{
+        font-size: 1.7rem;
+        text-align: center;
+    }
+}
+#my-projects{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+}
+#my-projects a{
+    color: antiquewhite;
+    text-decoration: none;
+    margin: 10px;
+    width: 90vw;
+    height: 60vw;
+    border: solid white;
+    border-radius: 3px;
+    background-color: var(--sec-color);
+}
+@media (min-width: 750px){
+    #my-projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #my-projects a{
+        margin: 10px;
+        width: 40vw;
+        height: 30vw;
+        border: solid;
+        border-radius: 3px;
+    }
+}
+@media (min-width: 900px){
+    #my-projects{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #my-projects a {
+        margin: 10px;
+        width: 420px;
+        height: 315px;
+        border: solid;
+        border-radius: 3px;
+    }
+}
+#my-projects a  img{
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    overflow: hidden;
+    margin: 0;
+}
+#my-projects a  p{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
+
+}
+#my-projects a  p::before{
+    content: '</';
+    margin-right: 5px;
+    color: orange;
+    opacity: 0;
+    visibility: hidden;
+    transition: 500ms;
+}
+#my-projects a  p::after{
+    content: '>';
+    margin-left: 5px;
+    color: orange;
+    opacity: 0;
+    visibility: hidden;
+    transition: 500ms;
+
+}
+#my-projects a:hover p::before, #my-projects a:hover p::after{
+    opacity: 1;
+    visibility: visible;
+
+}
+@media screen and (min-width: 750px) and (max-width: 900px){
+    #my-projects a  p{
+        font-size: 1.3em;
+}
+}
+@media screen and (max-width: 520px){
+    #my-projects a  p{
+        font-size: 1.5em;
+}
+}
+@media screen and (max-width: 400px){
+    #my-projects a  p{
+        font-size: 1.3em;
+}
+}
+
+#sec-header{
+    font-size:2.4rem;
+    margin-left: 20px;
+}
+#more-pro-btn{
+    z-index: 1;
+    position: relative;
+    margin-left: calc(50% - 70px);
+    bottom: -30px;
+    padding: 0;
+    transition: 200ms;
+}
+#more-projects{
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 10px auto;
+    padding: 3px 5px;
+    background-color: antiquewhite;
+    color:#004d36;
+    font-weight: 700;
+    font-family: Helvetica, sans-serif;
+    transition: 200ms;
+}
+#more-projects::after{
+    content: '>';
+    margin: 2px;
+    position: relative;
+    bottom: -2.2px;
+   
+}
+#more-pro-btn:hover #more-projects{
+    color: white;
+    background-color: #004d36;
+
+}
+#contacts{
+    position: relative;
+    padding-top: 30px;
+    height: 100vh;
+}
+#contacts h1{
+    font-size: 5rem;
+    margin-top: 10%;
+    text-align: center;
+}
+#contacts #contact-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: reltaive;
+    top: 50px;
+    margin: 0 auto;
+    width: 90%;
+}
+@media (max-width: 500px) {
+    #contacts #contact-list{
+        flex-direction: column;
+    transform: translateY(-58px);
+    bottom: 0;
+        margin-top: -14%;
+    }
+    #contacts #contact-list a{
+        left: 20%;
+    }
+    #contacts #contact-list a:nth-child(1){
+        top: 70px;
+    }
+    #contacts #contact-list a:nth-child(2){
+        top: 140px;
+    }
+    #contacts #contact-list a:nth-child(3){
+        top: 210px;
+    }
+    #contacts #contact-list a:nth-child(4){
+        top: 280px;
+    }
+    #contacts #contact-list a:nth-child(5){
+        top: 350px;
+    }
+}
+#contacts #contact-list a{
+    font-size: 2rem;
+    margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family:  Helvetica, sans-serif;
+    padding: 5px;
+    transition: 200ms ease;
+    position: absolute;
+}
+@media (min-width: 500.1px) {
+#contacts #contact-list a{
+    top: 50%;
+}
+#contacts #contact-list a:nth-child(1){
+    left: 100px;
+}
+#contacts #contact-list a:nth-child(2){
+    left: 330px;
+}
+#contacts #contact-list a:nth-child(3){
+    left: 540px;
+}
+#contacts #contact-list a:nth-child(4){
+    left: 730px;
+}
+#contacts #contact-list a:nth-child(5){
+    left: 1000px;
+}
+#contacts #contact-list a img{
+    margin: 0 5px;
+}
+}
+#contacts #contact-list a:hover{
+    border: solid black 2px;
+    border-radius: 3px;
+    transform: scale(1.2);
+}
+
+footer{
+    height: 15vh;
+    max-height: 150px;
+    width: 95%;
+    margin: 0 auto;
+    border-top: solid white 3px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+@media  (max-width: 500px) {
+    footer{
+        flex-direction: column;
+        align-items: start;
+        height: 10vh;
+    }
+}
+footer h3{
+    font-family: helvetica, sans-serif;
+    color: black;
+    margin:10px 15px ;
+    font-size: 1.5rem;
+}
